@@ -1,0 +1,33 @@
+<!-- custom properties -->
+<link rel="import" href="global-custom-properties.html">
+
+<!-- styles for Vaadin components -->
+<link rel="import" href="vaadin-components/vaadin-button-theme.html">
+<link rel="import" href="vaadin-components/vaadin-combo-box-theme.html">
+<link rel="import" href="vaadin-components/vaadin-grid-theme.html">
+<link rel="import" href="vaadin-components/vaadin-text-field-theme.html">
+
+<!-- styles for custom components -->
+<link rel="import" href="components/header-style.html">
+<link rel="import" href="components/content-style.html">
+<link rel="import" href="components/footer-style.html">
+
+<!-- Page elements -->
+<custom-style>
+    <style>
+        body {
+            min-width: 815px;
+            pointer-events: all !important;
+            background-color: whitesmoke;
+        }
+    </style>
+</custom-style>
+
+<dom-module id="shared-styles">
+    <template>
+        <!-- styles for custom components -->
+        <style include="header-style content-style footer-style" theme="">
+
+        </style>
+    </template>
+</dom-module>

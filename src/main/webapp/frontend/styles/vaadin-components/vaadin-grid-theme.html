@@ -1,0 +1,52 @@
+<dom-module id="vaadin-grid-theme" theme-for="vaadin-grid">
+    <template>
+        <style>
+            :host {
+                /*background-color:red; */
+            }
+            :host table thead tr[part=row] th {
+                min-height: 36px;
+            }
+
+            :host table thead tr[part=row] th,
+            :host table tbody tr[part=row] td {
+                background-color: #F4F6FA;
+            }
+
+
+            :host [part="cell header-cell"] ::slotted(vaadin-grid-cell-content),
+            :host [part="cell body-cell"] ::slotted(vaadin-grid-cell-content) {
+                padding-top: 20px;
+                padding-bottom: 20px;
+                font-size: 12px;
+                font-weight: 500;
+                text-align: center;
+                border: 1px solid;
+            }
+
+
+            :host [part="cell body-cell"] ::slotted(vaadin-grid-cell-content) {
+            }
+
+            :host [part="cell body-cell"]:first-child ::slotted(vaadin-grid-cell-content) {
+                text-align: center;
+                padding-right: 30px;
+                background-color: #c0c591;
+
+            }
+
+            /*:host [part="cell header-cell"]:nth-of-type(4) ::slotted(vaadin-grid-cell-content) {*/
+                /*text-align: right;*/
+                /*padding-right: 30px;*/
+            /*}*/
+
+            :host table tbody tr[part=row] td {
+                background-color: #F4F6FA;
+                color: #76828A;
+                font-family: var(--lumo-font-family);
+                font-size: 14px;
+            }
+
+        </style>
+    </template>
+</dom-module>

@@ -1,0 +1,52 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../styles/shared-styles.html">
+<link rel="import"
+      href="../bower_components/vaadin-ordered-layout/src/vaadin-vertical-layout.html">
+<link rel="import"
+      href="../bower_components/vaadin-combo-box/src/vaadin-combo-box.html">
+<link rel="import" href="../bower_components/vaadin-text-field/src/vaadin-text-field.html">
+
+<dom-module id="application-main-view">
+    <template>
+<style include="shared-styles">
+
+        </style>
+<div class="header">
+ <h1>Header</h1>
+</div>
+<div class="content">
+ <h1>Content</h1>
+</div>
+<div class="footer">
+ <h1>Footer</h1>
+</div>
+<div>
+ <vaadin-vertical-layout>
+  <h1>vaadin-combo-box</h1>
+  <vaadin-combo-box items="[[items]]" label="Label"></vaadin-combo-box>
+ </vaadin-vertical-layout>
+</div>
+<div>
+ <vaadin-vertical-layout>
+  <h1>vaadin-text-field</h1>
+  <vaadin-text-field class="special-field"></vaadin-text-field>
+ </vaadin-vertical-layout>
+</div>
+</template>
+
+    <script>
+        class ApplicationMainView extends Polymer.Element {
+            static get is() {
+                return 'application-main-view';
+            }
+
+            static get properties() {
+                return {
+                    // Declare your properties here.
+                };
+            }
+        }
+
+        customElements.define(ApplicationMainView.is, ApplicationMainView);
+    </script>
+</dom-module>
