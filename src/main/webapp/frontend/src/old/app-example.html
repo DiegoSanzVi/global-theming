@@ -1,0 +1,106 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../../styles/shared-styles.html">
+<link rel="import"
+      href="../bower_components/vaadin-ordered-layout/src/vaadin-vertical-layout.html">
+<link rel="import"
+      href="../bower_components/vaadin-combo-box/src/vaadin-combo-box.html">
+<link rel="import" href="../bower_components/vaadin-text-field/src/vaadin-text-field.html">
+<link rel="import" href="../bower_components/vaadin-icons/vaadin-icons.html">
+<link rel="import" href="../../vaadin-button/vaadin-button.html">
+<link rel="import" href="../../vaadin-checkbox/vaadin-checkbox.html">
+<link rel="import" href="../../vaadin-combo-box/vaadin-combo-box.html">
+<link rel="import" href="all-imports.html">
+
+
+<dom-module id="app-example">
+    <template>
+        <vaadin-vertical-layout style="width: 45%; background-color: var(--lumo-shade-5pct);" theme="padding spacing-l">
+            <div>
+                <h4>Header 4 <span theme="badge">Badge</span></h4>
+                <p>Paragraph lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+            </div>
+            <vaadin-form-layout responsive-steps='[{"minWidth": "0", "columns": 1, "labelsPosition": "top"}, {"minWidth": "400px", "columns": 2, "labelsPosition": "top"}]'>
+                <vaadin-text-field label="Text field" placeholder="Placeholder" error-message="Error message" required></vaadin-text-field>
+                <vaadin-select label="Select" placeholder="Placeholder" required error-message="Select an option">
+                    <iron-icon icon="lumo:bar-chart" slot="prefix"></iron-icon>
+                    <template>
+                        <vaadin-list-box>
+                            <vaadin-item>Option one</vaadin-item>
+                            <vaadin-item>Option two</vaadin-item>
+                            <vaadin-item>Option three</vaadin-item>
+                            <vaadin-item>Option four</vaadin-item>
+                            <vaadin-item>Option five</vaadin-item>
+                            <vaadin-item>Option six</vaadin-item>
+                            <hr>
+                            <vaadin-item>Option seven</vaadin-item>
+                            <vaadin-item>Option eight</vaadin-item>
+                            <vaadin-item>Option nine</vaadin-item>
+                            <vaadin-item>Option ten</vaadin-item>
+                            <hr>
+                            <vaadin-item>Option eleven</vaadin-item>
+                            <vaadin-item disabled>Option twelve</vaadin-item>
+                            <vaadin-item disabled>Option thirteen</vaadin-item>
+                            <vaadin-item disabled>Option fourteen</vaadin-item>
+                        </vaadin-list-box>
+                    </template>
+                </vaadin-select>
+                <vaadin-date-picker label="Date picker" placeholder="Placeholder"></vaadin-date-picker>
+                <vaadin-select label="Select" placeholder="Placeholder">
+                    <template>
+                        <vaadin-list-box>
+                            <vaadin-item><iron-icon icon="lumo:user"></iron-icon> Option one</vaadin-item>
+                            <vaadin-item><iron-icon icon="lumo:phone"></iron-icon> Option two</vaadin-item>
+                            <hr>
+                            <vaadin-item><iron-icon icon="lumo:cog"></iron-icon> Option three</vaadin-item>
+                            <vaadin-item disabled><iron-icon icon="lumo:upload"></iron-icon> Option four</vaadin-item>
+                        </vaadin-list-box>
+                    </template>
+                </vaadin-select>
+                <vaadin-text-area label="Text area" placeholder="Placeholder" colspan="2">
+                    <iron-icon icon="lumo:search" slot="prefix"></iron-icon>
+                </vaadin-text-area>
+                <vaadin-password-field label="Password"></vaadin-password-field>
+                <vaadin-combo-box label="Combo box" placeholder="Placeholder" items='["Option one", "Option two", "Option three"]' allow-custom-value>
+                    <iron-icon icon="vaadin:clock" slot="prefix"></iron-icon>
+                </vaadin-combo-box>
+                <vaadin-form-item>
+                    <label slot="label">Checkboxes</label>
+                    <div>
+                        <vaadin-checkbox checked>Option one</vaadin-checkbox>
+                        <vaadin-checkbox>Option two</vaadin-checkbox>
+                    </div>
+                </vaadin-form-item>
+                <vaadin-form-item>
+                    <label slot="label">Radio group</label>
+                    <vaadin-radio-group>
+                        <vaadin-radio-button checked>Option one</vaadin-radio-button>
+                        <vaadin-radio-button>Option two</vaadin-radio-button>
+                        <vaadin-radio-button>Option three</vaadin-radio-button>
+                    </vaadin-radio-group>
+                </vaadin-form-item>
+                <br>
+                <vaadin-horizontal-layout colspan="2" theme="spacing margin">
+                    <vaadin-button theme="primary"><iron-icon icon="vaadin:plus" slot="prefix"></iron-icon>Primary Button</vaadin-button>
+                    <vaadin-button theme=""><iron-icon icon="vaadin:trash" slot="prefix"></iron-icon>Secondary Button</vaadin-button>
+                </vaadin-horizontal-layout>
+            </vaadin-form-layout>
+
+
+        </vaadin-vertical-layout>
+    </template>
+
+    <script>
+        class AppExample extends Polymer.Element {
+            static get is() {
+                return 'app-example';
+            }
+
+            static get properties() {
+                return {
+                    // Declare your properties here.
+                };
+            }
+        }
+        customElements.define(AppExample.is, AppExample);
+    </script>
+</dom-module>

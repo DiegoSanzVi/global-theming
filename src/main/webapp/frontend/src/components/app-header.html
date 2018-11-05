@@ -1,4 +1,6 @@
-<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/vaadin-dialog/vaadin-dialog.html">
+<link rel="import" href="../../bower_components/vaadin-button/vaadin-button.html">
 
 <dom-module id="app-header">
     <template>
@@ -12,7 +14,7 @@
 
                 .header {
                     overflow: hidden;
-                    background-color: #f1f1f1;
+                    background-color: #26790c;
                     padding: 20px 10px;
                 }
 
@@ -56,18 +58,34 @@
                         float: none;
                     }
                 }
+                .site-footer__vaadin-logo {
+                    display: inline-block;
+                    width: 100%;
+                    max-width: 200px;
+                }
+
             </style>
 
 
         <div class="header">
-            <a href="#default" class="logo">CompanyLogo</a>
+            <img class="site-footer__vaadin-logo" src="images/vaadin-logo.svg" alt="Vaadin">
             <div class="header-right">
                 <a class="active" href="#home">Home</a>
                 <a href="#contact">Contact</a>
                 <a href="#about">About</a>
+                <vaadin-button theme="primary success" id="openDialog"><iron-icon icon="lumo:arrow-up" slot="prefix"></iron-icon>Open Dialog</vaadin-button>
+                <vaadin-dialog id="info-dialog">
+                    <template>
+                        <h2>Dialog</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                        <h6>Header 6</h6>
+                        <p theme="font-size-s">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                        <hr>
+                        <vaadin-button theme="primary">Close</vaadin-button>
+                    </template>
+                </vaadin-dialog>
             </div>
         </div>
-
 
     </template>
 
@@ -81,6 +99,18 @@
                 return {
                     // Declare your properties here.
                 };
+            }
+
+            ready(){
+                super.ready();
+                this.shadowRoot.querySelector('#openDialog').addEventListener('click', function() {
+                    this.shadowRoot.querySelector('#info-dialog').opened = true;
+                }.bind(this));
+                // this.shadowRoot.querySelector('vaadin-dialog').addEventListener('opened-changed', function() {
+                //     this.$.overlay.querySelector('vaadin-button').addEventListener('click', () => {
+                //         this.opened = false;
+                // });
+                // });
             }
         }
         customElements.define(AppHeader.is, AppHeader);

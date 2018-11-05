@@ -1,0 +1,56 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/vaadin-ordered-layout/src/vaadin-vertical-layout.html">
+<link rel="import" href="../components/app-header.html">
+
+<dom-module id="view-template">
+    <template>
+        <style>
+            #page-view {
+                width: 100%;
+                height: 100%;
+            }
+
+            .header {
+                height: 20%;
+                width: 100%;
+                background-color: #eeeeee;
+            }
+
+            .content {
+                height: 60%;
+                width: 100%;
+                background-color: #45a049;
+            }
+
+            .footer {
+                height: 20%;
+                width: 100%;
+                background-color: deepskyblue;
+            }
+        </style>
+        <vaadin-vertical-layout id="page-view">
+            <div class="header">
+                <app-header></app-header>
+            </div>
+            <div class="content">
+                <slot></slot>
+            </div>
+            <div class="footer"></div>
+        </vaadin-vertical-layout>
+    </template>
+
+    <script>
+        class ViewTemplate extends Polymer.Element {
+            static get is() {
+                return 'view-template';
+            }
+
+            static get properties() {
+                return {
+                    // Declare your properties here.
+                };
+            }
+        }
+        customElements.define(ViewTemplate.is, ViewTemplate);
+    </script>
+</dom-module>

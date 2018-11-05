@@ -28,7 +28,7 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
  * does not overwrite or otherwise change this file.
  */
 @Tag("main-view")
-@HtmlImport("src/main-view.html")
+@HtmlImport("src/views/main-view.html")
 @Route("")
 public class MainView extends PolymerTemplate<MainView.MainViewModel> {
 
