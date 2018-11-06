@@ -1,26 +1,21 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/vaadin-dialog/vaadin-dialog.html">
 <link rel="import" href="../../bower_components/vaadin-button/vaadin-button.html">
+<link rel="import" href="../../styles/shared-styles.html">
 
 <dom-module id="app-header">
     <template>
-            <style>
-                * {box-sizing: border-box;}
-
-                body {
-                    margin: 0;
-                    font-family: Arial, Helvetica, sans-serif;
+            <style include="shared-styles">
+                :host {
+                    color: var(--app-header-color);
+                    background-color: var(--app-header-background-color);
                 }
-
                 .header {
-                    overflow: hidden;
-                    background-color: #26790c;
                     padding: 20px 10px;
                 }
 
                 .header a {
                     float: left;
-                    color: black;
                     text-align: center;
                     padding: 12px;
                     text-decoration: none;
@@ -69,7 +64,7 @@
 
         <div class="header">
             <img class="site-footer__vaadin-logo" src="images/vaadin-logo.svg" alt="Vaadin">
-            <div class="header-right">
+            <div class="div-to-the-right">
                 <a class="active" href="#home">Home</a>
                 <a href="#contact">Contact</a>
                 <a href="#about">About</a>

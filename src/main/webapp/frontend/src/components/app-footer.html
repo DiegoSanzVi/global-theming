@@ -1,24 +1,37 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/vaadin-icons/vaadin-icons.html">
 <link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../../styles/shared-styles.html">
 
 <dom-module id="app-footer">
     <template>
-<style>
-        :host {
-            margin:auto;
-        }
-        .footer-container {
-            text-align: center;
-        }
+        <style include="shared-styles">
+            :host {
+                margin: auto;
+                background-color: var(--app-footer-background-color);
+                color: var(--app-footer-color);
+                padding: var(--lumo-space-l);
+            }
+
+            .footer-container {
+                text-align: center;
+            }
+
+            .footer-container a {
+                color: #959ea6;
+            }
         </style>
-<div class="site-footer__byline">
- <div class="footer-container">
-  © 2018 Vaadin Ltd. All rights reserved. <a router-link="" target="_blank" href="/terms-of-service">Terms of Service</a> and <a target="_blank" href="/privacy-policy">Privacy Policy
-  </div>
- </div>
-</div>
-</template>
+        <div class="site-footer__byline">
+            <div class="footer-container">
+                © 2018 Vaadin Ltd. All rights reserved. <a router-link=""
+                                                           target="_blank"
+                                                           href="/terms-of-service">Terms
+                of Service</a> and <a target="_blank" href="/privacy-policy">Privacy
+                Policy
+            </div>
+        </div>
+        </div>
+    </template>
 
     <script>
         class AppFooter extends Polymer.Element {

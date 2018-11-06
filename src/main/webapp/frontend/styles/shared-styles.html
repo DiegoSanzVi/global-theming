@@ -8,16 +8,19 @@
 <link rel="import" href="vaadin-components/vaadin-text-field-theme.html">
 
 <!-- styles for custom components -->
-<link rel="import" href="components/header-style.html">
-<link rel="import" href="components/content-style.html">
-<link rel="import" href="components/footer-style.html">
+<!--<link rel="import" href="components/header-style.html">-->
+<!--<link rel="import" href="components/content-style.html">-->
+<!--<link rel="import" href="components/footer-style.html">-->
 
 <!-- Page elements -->
 <custom-style>
     <style>
+        * {box-sizing: border-box;}
+
         body {
             pointer-events: all !important;
-            background-color: whitesmoke;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--app-background-color);
             height: 100vh;
             width: 100vw;
             margin: 0;
@@ -28,33 +31,21 @@
 <dom-module id="shared-styles">
     <template>
         <!-- styles for custom components -->
-        <style include="header-style content-style footer-style" theme="">
-            #filter-container {
-                width: 100%;
-                background-color: #eee;
+        <style>
+
+            a {
+                color: blue;
+                text-decoration: none;
             }
 
-            #filter-container > * {
-                margin: var(--lumo-space-s);
+            iron-icon {
+                width: var(--lumo-icon-size-m);
+                height: var(--lumo-icon-size-m);
+                flex: none;
             }
 
-            #filter-container vaadin-text-field {
-                width: 250px;
-            }
-
-            #filter-container {
-                overflow: auto;
-            }
-            #owner-cb {
-                float: right;
-            }
-
-            #animals-grid-container {
-                width: 100%;
-            }
-
-            #animals-grid {
-                margin: var(--lumo-space-s);
+            vaadin-grid {
+                height: -webkit-fill-available;
             }
 
             app-header,
@@ -64,6 +55,36 @@
                 width: 100%;
                 overflow: auto;
             }
+
+            .full-screen {
+                width: 100%;
+                height: 100%;
+            }
+
+            .div-to-the-right {
+                float:right;
+            }
+
+            .to-the-right {
+                margin-left: auto;
+            }
+
+            .large-icon {
+                width: var(--lumo-icon-size-l);
+                height: var(--lumo-icon-size-l);
+            }
+            .small-icon {
+                width: var(--lumo-icon-size-s);
+                height: var(--lumo-icon-size-s);
+            }
+
+            /* Add a background color and some padding around the form */
+            .container > * {
+                margin: var(--lumo-space-s);
+            }
+
+
+
         </style>
     </template>
 </dom-module>

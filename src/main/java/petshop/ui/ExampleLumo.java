@@ -1,7 +1,15 @@
 package petshop.ui;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.jfairy.Fairy;
+import org.jfairy.producer.person.Person;
+
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.HtmlImport;
+import com.vaadin.flow.component.grid.Grid;
+import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.templatemodel.TemplateModel;
@@ -17,11 +25,26 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 @Route("lumo")
 public class ExampleLumo extends PolymerTemplate<ExampleLumo.SuggestionViewModel> {
 
+    @Id("vaadinGrid")
+    private Grid<Person> vaadinGrid;
+
+    private final Fairy fairy = Fairy.create();
+
     /**
      * Creates a new SuggestionView.
      */
     public ExampleLumo() {
+
+        vaadinGrid.addColumn(Person::firstName).setHeader("Name");
+        vaadinGrid.addColumn(Person::lastName).setHeader("Surname");
+
+        List<Person> people = new ArrayList<Person>();
         // You can initialise any data required for the connected UI components here.
+        for (int i = 0; i  < 100; i++) {
+            people.add(fairy.person());
+        }
+
+        vaadinGrid.setItems(people);
     }
 
     /**
