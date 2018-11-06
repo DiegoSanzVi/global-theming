@@ -1,18 +1,20 @@
-<link rel="import" href="../bower_components/polymer/polymer.html">
-<link rel="import"
-      href="../../bower_components/vaadin-text-field/src/vaadin-text-field.html">
-<link rel="import"
-      href="../../bower_components/vaadin-combo-box/src/vaadin-combo-box.html">
-<link rel="import"
-      href="../../bower_components/vaadin-text-field/src/vaadin-text-area.html">
-<link rel="import"
-      href="../../bower_components/vaadin-ordered-layout/src/vaadin-vertical-layout.html">
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../components/app-header.html">
+<link rel="import" href="../components/app-footer.html">
+<link rel="import" href="../components/contact-information.html">
 
 <link rel="import" href="../../styles/shared-styles.html">
 
-<dom-module id="contact-information">
+
+<dom-module id="suggestion-view">
+
+
     <template>
         <style include="shared-styles">
+            #suggestion-container {
+                margin: auto;
+                width: 600px;
+            }
             /* Style inputs with type="text", select elements and textareas */
             input[type=text], select, textarea {
                 width: 100%; /* Full width */
@@ -47,33 +49,35 @@
                 padding: 20px;
             }
         </style>
-        <div class="container">
-            <form action="action_page.php">
-                <label for="fname">First Name</label>
-                <input type="text" id="fname" name="firstname"
-                       placeholder="Your name..">
-                <label for="lname">Last Name</label>
-                <input type="text" id="lname" name="lastname"
-                       placeholder="Your last name..">
-                <label for="country">Country</label>
-                <select id="country" name="country">
-                    <option value="australia">Australia</option>
-                    <option value="canada">Canada</option>
-                    <option value="usa">USA</option>
-                </select>
-                <label for="subject">Subject</label>
-                <textarea id="subject" name="subject"
-                          placeholder="Write something.."
-                          style="height:200px"></textarea>
-                <input type="submit" value="Submit">
-            </form>
-        </div>
+        <app-header></app-header>
+            <div class="container">
+                <form action="action_page.php">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="firstname"
+                           placeholder="Your name..">
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lastname"
+                           placeholder="Your last name..">
+                    <label for="country">Country</label>
+                    <select id="country" name="country">
+                        <option value="australia">Australia</option>
+                        <option value="canada">Canada</option>
+                        <option value="usa">USA</option>
+                    </select>
+                    <label for="subject">Subject</label>
+                    <textarea id="subject" name="subject"
+                              placeholder="Write something.."
+                              style="height:200px"></textarea>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        <app-footer></app-footer>
     </template>
 
     <script>
-        class ContactInformation extends Polymer.Element {
+        class SuggestionView extends Polymer.Element {
             static get is() {
-                return 'contact-information';
+                return 'suggestion-view';
             }
 
             static get properties() {
@@ -82,7 +86,6 @@
                 };
             }
         }
-
-        customElements.define(ContactInformation.is, ContactInformation);
+        customElements.define(SuggestionView.is, SuggestionView);
     </script>
 </dom-module>

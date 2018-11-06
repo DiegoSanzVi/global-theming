@@ -16,9 +16,11 @@
 <custom-style>
     <style>
         body {
-            min-width: 815px;
             pointer-events: all !important;
             background-color: whitesmoke;
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
         }
     </style>
 </custom-style>
@@ -27,7 +29,41 @@
     <template>
         <!-- styles for custom components -->
         <style include="header-style content-style footer-style" theme="">
+            #filter-container {
+                width: 100%;
+                background-color: #eee;
+            }
 
+            #filter-container > * {
+                margin: var(--lumo-space-s);
+            }
+
+            #filter-container vaadin-text-field {
+                width: 250px;
+            }
+
+            #filter-container {
+                overflow: auto;
+            }
+            #owner-cb {
+                float: right;
+            }
+
+            #animals-grid-container {
+                width: 100%;
+            }
+
+            #animals-grid {
+                margin: var(--lumo-space-s);
+            }
+
+            app-header,
+            app-footer,
+            .container {
+                display: block;
+                width: 100%;
+                overflow: auto;
+            }
         </style>
     </template>
 </dom-module>
